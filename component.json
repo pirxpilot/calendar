@@ -9,10 +9,12 @@
     "ui"
   ],
   "dependencies": {
+    "code42day/bounds": "*",
     "component/range": "*",
     "component/jquery": "*",
     "component/emitter": "*",
-    "component/in-groups-of": "*"
+    "component/in-groups-of": "*",
+    "component/type": "*"
   },
   "development": {
     "component/aurora-calendar": "*"
@@ -25,6 +27,7 @@
     "lib/utils.js",
     "lib/template.js",
     "lib/calendar.js",
+    "lib/dayrange.js",
     "lib/days.js"
   ],
   "license": "MIT"

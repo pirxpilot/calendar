@@ -35,10 +35,25 @@
         font-size: 10px;
         padding: 3px;
       }
+
+      .calendar td a.invalid {
+        opacity: .2;
+        background-color: rgba(0, 0, 0, .2);
+        cursor: default;
+      }
+
+      #restricted {
+        clear: left;
+      }
+      #restricted .calendar {
+        float: left;
+      }
     </style>
   </head>
   <body>
     <h1>Calendar</h1>
+    <div id='standard'></div>
+    <div id='restricted'></div>
     <script src="build/build.js"></script>
     <script>
       var Calendar = require('calendar');
@@ -61,16 +76,28 @@
         two.select(newDate);
       });
 
-      one.el.appendTo('body');
+      one.el.appendTo('#standard');
 
       var small = new Calendar;
       small.addClass('small');
-      small.el.appendTo('body');
+      small.el.appendTo('#standard');
       small.next();
-      
+
       var large = new Calendar;
       large.addClass('large');
-      large.el.appendTo('body');
+      large.el.appendTo('#standard');
+
+
+      var restricted = new Calendar(new Date(2004, 6, 11))
+        .min(new Date(2004, 5, 12))
+        .max([2004, 7, 19])
+        .select(new Date(2004, 7, 19));
+      restricted.el.appendTo('#restricted');
+      restricted = new Calendar(new Date(2004, 6, 11))
+        .max(new Date(2004, 5, 12))
+        .min([2004, 5, 18])
+        .show(new Date(2004, 5, 19));
+      restricted.el.appendTo('#restricted');
     </script>
   </body>
 </html>
