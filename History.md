@@ -1,4 +1,10 @@
 
+0.1.0 / 2014-04-01
+==================
+
+ * restore pointer cursor for days
+ * Options for jshint
+
 0.0.5 / 2013-06-06 
 ==================
 
