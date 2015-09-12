@@ -1,23 +1,35 @@
+PROJECT=calendar
+NODE_BIN=./node_modules/.bin
 SRC = index.js	\
 	lib/calendar.js	\
 	lib/days.js
 
-all: lint test build
+all: check build
 
-build: $(SRC) lib/template.html lib/calendar.css | components
-	@component build --dev
+check: lint test
 
-components:
-	@component install --dev
+build: build/build.js build/build.css
+
+build/build.js: $(SRC) node_modules
+	mkdir -p build
+	$(NODE_BIN)/browserify \
+		--transform stringify \
+		--require ./index.js:$(PROJECT) \
+		--outfile $@
+
+build/build.css: lib/calendar.css
+	cp $< $@
+
+lint: | node_modules
+	$(NODE_BIN)/jshint $(SRC)
+
+test: | node_modules
+	$(NODE_BIN)/mocha --reporter spec
+
+node_modules: package.json
+	npm install
 
 clean:
-	rm -fr build components
+	rm -fr build node_modules
 
-lint:
-	@./node_modules/.bin/jshint $(SRC)
-
-test:
-	@./node_modules/.bin/mocha \
-		--reporter spec
-
-.PHONY: clean test lint all
+.PHONY: clean lint test check all build
