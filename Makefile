@@ -13,7 +13,6 @@ build: build/build.js build/build.css
 build/build.js: $(SRC) node_modules
 	mkdir -p build
 	$(NODE_BIN)/browserify \
-		--transform stringify \
 		--require ./index.js:$(PROJECT) \
 		--outfile $@
 

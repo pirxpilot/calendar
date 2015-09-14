@@ -48,6 +48,11 @@
     "type": "component-type",
     "normalize": "democracyos-normalize"
   },
+  "browserify": {
+    "transform": [
+      "stringify"
+    ]
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/code42day/calendar/issues"
