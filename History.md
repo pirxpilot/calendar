@@ -1,4 +1,10 @@
 
+0.2.3 / 2015-09-14
+==================
+
+ * fix Makefile - restore lint and test targets
+ * fix dependencies - type-component
+
 0.2.2 / 2015-09-14
 ==================
 
