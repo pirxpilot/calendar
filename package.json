@@ -27,14 +27,14 @@
     "democracyos-normalize": "~0",
     "in-groups-of": "component/in-groups-of#1.0.0",
     "map-component": "*",
-    "range-component": "^1.0.0"
+    "range-component": "^1.0.0",
+    "type-component": "~0"
   },
   "devDependencies": {
     "browserify": "^11.1.0",
     "jshint": "^2.7.0",
     "mocha": "~1",
-    "stringify": "^3.1.0",
-    "type-component": "0.0.1"
+    "stringify": "^3.1.0"
   },
   "browser": {
     "bind": "component-bind",
