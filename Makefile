@@ -3,32 +3,32 @@ NODE_BIN=./node_modules/.bin
 SRC = index.js	\
 	lib/calendar.js	\
 	lib/days.js
+CSS = lib/calendar.css
 
-all: check build
+all: check compile
 
-check: lint test
+check: lint
 
-build: build/build.js build/build.css
+compile: build/build.js build/build.css
 
-build/build.js: $(SRC) node_modules
-	mkdir -p build
-	$(NODE_BIN)/browserify \
-		--require ./index.js:$(PROJECT) \
-		--outfile $@
+build:
+	mkdir -p $@
 
-build/build.css: lib/calendar.css
-	cp $< $@
+build/build.css: $(CSS) | build
+	cat $^ > $@
 
-lint: | node_modules
-	$(NODE_BIN)/jshint $(SRC)
+build/build.js: node_modules $(SRC) | build
+	browserify --require ./index.js:$(PROJECT) --outfile $@
 
-test: | node_modules
-	$(NODE_BIN)/mocha --reporter spec
+.DELETE_ON_ERROR: build/build.js
 
 node_modules: package.json
 	npm install
 
+lint:
+	jshint $(SRC)
+
 clean:
 	rm -fr build node_modules
 
-.PHONY: clean lint test check all build
+.PHONY: clean lint check all compile
