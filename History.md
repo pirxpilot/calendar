@@ -1,4 +1,10 @@
 
+0.2.2 / 2015-09-14
+==================
+
+ * improve Makefile
+ * add browserify options to package.json
+
 0.2.1 / 2015-09-12
 ==================
 
