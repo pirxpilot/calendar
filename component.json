@@ -19,7 +19,6 @@
     "component/emitter": "1.0.0",
     "component/in-groups-of": "1.0.0",
     "component/type": "*",
-    "yields/empty": "*",
     "stephenmathieson/normalize": "*"
   },
   "development": {
