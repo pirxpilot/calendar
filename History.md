@@ -1,4 +1,10 @@
 
+0.2.4 / 2015-09-18
+==================
+
+ * remove yields/empty dependency
+ * switch deps: in-groups-of -> code42day-in-groups-of
+
 0.2.3 / 2015-09-14
 ==================
 
