@@ -25,7 +25,7 @@
     "component-event": "*",
     "component-type": "*",
     "democracyos-normalize": "~0",
-    "in-groups-of": "component/in-groups-of#1.0.0",
+    "code42day-in-groups-of": "^1.0.1",
     "map-component": "*",
     "range-component": "^1.0.0",
     "type-component": "~0"
@@ -42,6 +42,7 @@
     "classes": "component-classes",
     "empty": "component-empty",
     "event": "component-event",
+    "in-groups-of": "code42day-in-groups-of",
     "map": "map-component",
     "range": "range-component",
     "emitter": "component-emitter",
