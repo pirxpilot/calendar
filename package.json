@@ -5,10 +5,7 @@
   "scripts": {
     "test": "make check"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/code42day/calendar.git"
-  },
+  "repository": "code42day/calendar.git",
   "keywords": [
     "browser",
     "calendar",
@@ -44,7 +41,8 @@
     ]
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/code42day/calendar/issues"
-  }
+  "files": [
+    "index.js",
+    "lib"
+  ]
 }
