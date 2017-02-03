@@ -23,11 +23,9 @@
     "component-domify": "*",
     "component-emitter": "^1.0.0",
     "component-event": "*",
-    "component-type": "*",
     "democracyos-normalize": "~0",
     "map-component": "*",
-    "range-component": "^1.0.0",
-    "type-component": "~0"
+    "range-component": "^1.0.0"
   },
   "devDependencies": {
     "browserify": "~14",
@@ -44,7 +42,6 @@
     "map": "map-component",
     "range": "range-component",
     "emitter": "component-emitter",
-    "type": "component-type",
     "normalize": "democracyos-normalize"
   },
   "browserify": {
