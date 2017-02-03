@@ -4,8 +4,8 @@
   "laxbreak": true,
   "laxcomma": true,
   "supernew": true,
+  "browser": true,
   "globals": {
-    "console": false,
     "describe": false,
     "exports": false,
     "it": false,
