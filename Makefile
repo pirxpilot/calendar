@@ -1,8 +1,6 @@
 PROJECT=calendar
 NODE_BIN=./node_modules/.bin
-SRC = index.js	\
-	lib/calendar.js	\
-	lib/days.js
+SRC = index.js $(wildcard lib/*.js)
 CSS = lib/calendar.css
 
 all: check compile
@@ -23,10 +21,10 @@ build/build.js: node_modules $(SRC) | build
 .DELETE_ON_ERROR: build/build.js
 
 node_modules: package.json
-	npm install
+	npm install && touch $@
 
 lint: | node_modules
-	$(NODE_BIN)/jshint $(SRC)
+	$(NODE_BIN)/jshint $(SRC) test
 
 test: | node_modules
 	$(NODE_BIN)/mocha --reporter spec
