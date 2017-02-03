@@ -1,4 +1,12 @@
 
+1.0.0 / 2017-02-03
+==================
+
+ * use Intl to localize month and weekdays
+ * breaking change: locale() now takes the String with desired locale (before it took object with month and weekday names)
+ * remove dependencies required only for non ES5 compliant browsers, upgrade other dependencies
+ * switch to yarn (from npm)
+
 0.2.4 / 2015-09-18
 ==================
 
