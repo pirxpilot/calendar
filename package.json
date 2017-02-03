@@ -23,7 +23,6 @@
     "component-emitter": "^1.0.0",
     "component-event": "*",
     "democracyos-normalize": "~0",
-    "map-component": "*",
     "range-component": "^1.0.0"
   },
   "devDependencies": {
@@ -37,7 +36,6 @@
     "classes": "component-classes",
     "event": "component-event",
     "in-groups-of": "code42day-in-groups-of",
-    "map": "map-component",
     "range": "range-component",
     "emitter": "component-emitter",
     "normalize": "democracyos-normalize"
