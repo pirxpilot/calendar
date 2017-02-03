@@ -1,3 +1,6 @@
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
 
 # Calendar
 
@@ -10,12 +13,12 @@
 
 ## Installation
 
-    $ component install component/calendar
+    $ nom install --save code42day-calendar
 
 ## Example
 
 ```js
-var Calendar = require('calendar');
+var Calendar = require('code42day-calendar');
 var cal = new Calendar;
 cal.el.appendTo('body');
 ```
@@ -85,3 +88,13 @@ cal.el.appendTo('body');
 
 [Intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
 [caniuse-intl]: http://caniuse.com/#search=Intl
+
+[npm-image]: https://img.shields.io/npm/v/code42day-calendar.svg
+[npm-url]: https://npmjs.org/package/code42day-calendar
+
+[travis-url]: https://travis-ci.org/code42day/calendar
+[travis-image]: https://img.shields.io/travis/code42day/calendar.svg
+
+[gemnasium-image]: https://img.shields.io/gemnasium/code42day/calendar.svg
+[gemnasium-url]: https://gemnasium.com/code42day/calendar
+
