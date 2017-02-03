@@ -66,11 +66,12 @@ cal.el.appendTo('body');
 
   Define latest valid date - calendar won't generate `change` events for dates after this one.
 
-### Calendar#locale({months, weekdaysMin})
+### Calendar#locale(locales)
 
   Set alternative locale:
-  - `months` - an array of 12 strings representing month names _January..December_.
-  - `weekdaysMin` - an array of 7 strings representing day names shortcuts _Sunday..Saturday_
+  - `locales` - Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the [Intl] page.
+
+  For [browsers][caniuse-intl] which do not support `Intl` in not available only English locale is supported.
 
 ## Themes
 
@@ -82,3 +83,5 @@ cal.el.appendTo('body');
 
   MIT
 
+[Intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
+[caniuse-intl]: http://caniuse.com/#search=Intl
