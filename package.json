@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "bounds": "^1.0.1",
+    "code42day-in-groups-of": "^1.0.1",
     "component-bind": "*",
     "component-classes": "*",
     "component-domify": "*",
@@ -24,15 +25,14 @@
     "component-event": "*",
     "component-type": "*",
     "democracyos-normalize": "~0",
-    "code42day-in-groups-of": "^1.0.1",
     "map-component": "*",
     "range-component": "^1.0.0",
     "type-component": "~0"
   },
   "devDependencies": {
-    "browserify": "^11.1.0",
+    "browserify": "~14",
     "jshint": "^2.7.0",
-    "mocha": "~1",
+    "mocha": "~3",
     "stringify": "^3.1.0"
   },
   "browser": {
