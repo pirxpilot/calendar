@@ -21,7 +21,7 @@ build/build.js: node_modules $(SRC) | build
 .DELETE_ON_ERROR: build/build.js
 
 node_modules: package.json
-	npm install && touch $@
+	yarn && touch $@
 
 lint: | node_modules
 	$(NODE_BIN)/jshint $(SRC) test
