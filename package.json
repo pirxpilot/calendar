@@ -1,11 +1,11 @@
 {
-  "name": "code42day-calendar",
+  "name": "@pirxpilot/calendar",
   "version": "1.0.0",
   "description": "Calendar component",
   "scripts": {
     "test": "make check"
   },
-  "repository": "code42day/calendar.git",
+  "repository": "https://github.com/pirxpilot/calendar.git",
   "keywords": [
     "browser",
     "calendar",

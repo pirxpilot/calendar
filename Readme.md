@@ -13,12 +13,12 @@
 
 ## Installation
 
-    $ nom install --save code42day-calendar
+    $ npm install --save @pirxpilot/calendar
 
 ## Example
 
 ```js
-var Calendar = require('code42day-calendar');
+var Calendar = require('@pirxpilot/calendar');
 var cal = new Calendar;
 cal.el.appendTo('body');
 ```
@@ -89,12 +89,12 @@ cal.el.appendTo('body');
 [Intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
 [caniuse-intl]: http://caniuse.com/#search=Intl
 
-[npm-image]: https://img.shields.io/npm/v/code42day-calendar.svg
-[npm-url]: https://npmjs.org/package/code42day-calendar
+[npm-image]: https://img.shields.io/npm/v/@pirxpilot/calendar.svg
+[npm-url]: https://npmjs.org/package/@pirxpilot/calendar
 
-[travis-url]: https://travis-ci.org/code42day/calendar
-[travis-image]: https://img.shields.io/travis/code42day/calendar.svg
+[travis-url]: https://travis-ci.org/pirxpilot/calendar
+[travis-image]: https://img.shields.io/travis/pirxpilot/calendar.svg
 
-[gemnasium-image]: https://img.shields.io/gemnasium/code42day/calendar.svg
-[gemnasium-url]: https://gemnasium.com/code42day/calendar
+[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/calendar.svg
+[gemnasium-url]: https://gemnasium.com/pirxpilot/calendar
 
