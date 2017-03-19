@@ -14,11 +14,11 @@
   ],
   "dependencies": {
     "bounds": "^1.0.1",
-    "code42day-in-groups-of": "^1.0.1",
     "component-classes": "*",
     "component-domify": "*",
     "component-emitter": "^1.0.0",
     "component-event": "*",
+    "@pirxpilot/in-groups-of": "^1.1.1",
     "range-component": "^1.0.0"
   },
   "devDependencies": {
@@ -31,7 +31,7 @@
     "domify": "component-domify",
     "classes": "component-classes",
     "event": "component-event",
-    "in-groups-of": "code42day-in-groups-of",
+    "in-groups-of": "@pirxpilot/in-groups-of",
     "range": "range-component",
     "emitter": "component-emitter"
   },
