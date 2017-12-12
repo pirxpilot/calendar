@@ -17,7 +17,6 @@
     "bounds": "^1.0.1",
     "component-domify": "*",
     "component-emitter": "^1.0.0",
-    "component-event": "*",
     "range-component": "^1.0.0"
   },
   "devDependencies": {
@@ -28,7 +27,6 @@
   },
   "browser": {
     "domify": "component-domify",
-    "event": "component-event",
     "in-groups-of": "@pirxpilot/in-groups-of",
     "range": "range-component",
     "emitter": "component-emitter"
