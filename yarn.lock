@@ -314,12 +314,6 @@ commander@2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-component-classes@*:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/component-classes/-/component-classes-1.2.6.tgz#c642394c3618a4d8b0b8919efccbbd930e5cd691"
-  dependencies:
-    component-indexof "0.0.3"
-
 component-domify@*:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/component-domify/-/component-domify-1.2.2.tgz#2f2d6d5d75e5aad3a34cdf5ff232c181b85e4ed2"
@@ -327,14 +321,6 @@ component-domify@*:
 component-emitter@^1.0.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
-
-component-event@*:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/component-event/-/component-event-0.2.0.tgz#8689a7c25a7dd0afe7e2e8408091d5b9e12ce196"
-
-component-indexof@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/component-indexof/-/component-indexof-0.0.3.tgz#11d091312239eb8f32c8f25ae9cb002ffe8d3c24"
 
 component-type@*:
   version "1.2.1"
