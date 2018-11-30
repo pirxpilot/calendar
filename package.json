@@ -30,6 +30,9 @@
       "stringify"
     ]
   },
+  "stringify": {
+    "minify": true
+  },
   "license": "MIT",
   "files": [
     "index.js",
