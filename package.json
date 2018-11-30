@@ -14,7 +14,7 @@
   ],
   "dependencies": {
     "@pirxpilot/in-groups-of": "^1.1.1",
-    "bounds": "^1.0.1",
+    "bounds": "~2",
     "component-domify": "*",
     "component-emitter": "^1.0.0",
     "range-component": "^1.0.0"
@@ -22,19 +22,16 @@
   "devDependencies": {
     "browserify": "~14",
     "jshint": "^2.7.0",
-    "mocha": "~3",
-    "stringify": "^3.1.0"
-  },
-  "browser": {
-    "domify": "component-domify",
-    "in-groups-of": "@pirxpilot/in-groups-of",
-    "range": "range-component",
-    "emitter": "component-emitter"
+    "mocha": "~5",
+    "stringify": "~5"
   },
   "browserify": {
     "transform": [
       "stringify"
     ]
+  },
+  "stringify": {
+    "minify": true
   },
   "license": "MIT",
   "files": [
