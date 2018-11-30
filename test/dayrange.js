@@ -1,11 +1,11 @@
-var DayRange = require('../lib/dayrange')
-  , assert = require('assert');
+const assert = require('assert');
+const DayRange = require('../lib/dayrange');
 
 describe('day range', function(){
   it('should consider all dates as valid if no min/max specified', function(){
-    var dr = new DayRange;
-    assert.ok(!dr.before(new Date));
-    assert.ok(!dr.after(new Date));
+    var dr = new DayRange();
+    assert.ok(!dr.before(new Date()));
+    assert.ok(!dr.after(new Date()));
     assert.ok(dr.valid([2002, 12, 10]));
   });
 
