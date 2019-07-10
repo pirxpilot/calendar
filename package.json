@@ -22,16 +22,7 @@
   "devDependencies": {
     "browserify": "~14",
     "jshint": "^2.7.0",
-    "mocha": "~5",
-    "stringify": "~5"
-  },
-  "browserify": {
-    "transform": [
-      "stringify"
-    ]
-  },
-  "stringify": {
-    "minify": true
+    "mocha": "~5"
   },
   "license": "MIT",
   "files": [
