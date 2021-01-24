@@ -15,7 +15,8 @@
 }
 
 .calendar-table td {
-  user-select: none;
+  -webkit-user-select: none;
+          user-select: none;
 }
 
 .calendar-table td a {
