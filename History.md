@@ -1,4 +1,9 @@
 
+2.0.2 / 2021-01-24
+==================
+
+ * add prefix to non-standard user-select property
+
 2.0.1 / 2019-07-09
 ==================
 
