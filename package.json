@@ -15,7 +15,6 @@
   "dependencies": {
     "@pirxpilot/in-groups-of": "^1.1.1",
     "bounds": "~2",
-    "component-domify": "*",
     "component-emitter": "^1.0.0",
     "range-component": "^1.0.0"
   },
