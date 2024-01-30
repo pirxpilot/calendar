@@ -19,7 +19,7 @@
     "range-component": "^1.0.0"
   },
   "devDependencies": {
-    "browserify": "~14",
+    "esbuild": "^0.20.0",
     "jshint": "^2.7.0",
     "mocha": "~5"
   },
