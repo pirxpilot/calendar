@@ -2,15 +2,15 @@ const { describe, it } = require('node:test');
 const assert = require('node:assert');
 const DayRange = require('../lib/dayrange');
 
-describe('day range', function(){
-  it('should consider all dates as valid if no min/max specified', function(){
+describe('day range', function () {
+  it('should consider all dates as valid if no min/max specified', function () {
     const dr = new DayRange();
     assert.ok(!dr.before(new Date()));
     assert.ok(!dr.after(new Date()));
     assert.ok(dr.valid([2002, 12, 10]));
   });
 
-  it('should consider dates inside of the range as valid', function(){
+  it('should consider dates inside of the range as valid', function () {
     const dr = new DayRange([2014, 3, 2], [2014, 4, 3]);
     assert.ok(dr.before([2014, 3, 1]));
     assert.ok(!dr.valid([2014, 3, 1]));
@@ -21,7 +21,7 @@ describe('day range', function(){
     assert.ok(dr.after([2014, 4, 4]));
   });
 
-  it('should work with mixture of dates and arrays', function(){
+  it('should work with mixture of dates and arrays', function () {
     const dr = new DayRange()
       .min([2014, 3, 2])
       .max(new Date(2014, 4, 3));
@@ -34,14 +34,14 @@ describe('day range', function(){
     assert.ok(dr.after(new Date(2014, 4, 4)));
   });
 
-  it('should work if only min is specified', function(){
+  it('should work if only min is specified', function () {
     const dr = new DayRange([2013, 3, 3]);
     assert.ok(!dr.valid([2013, 3, 2]));
     assert.ok(dr.valid([2013, 3, 3]));
     assert.ok(dr.valid([2013, 3, 4]));
   });
 
-  it('should work if only max is specified', function(){
+  it('should work if only max is specified', function () {
     const dr = new DayRange(null, [2013, 3, 3]);
     assert.ok(dr.valid([2013, 3, 2]));
     assert.ok(dr.valid([2013, 3, 3]));
