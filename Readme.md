@@ -1,13 +1,11 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Dependency Status][gemnasium-image]][gemnasium-url]
+[![Build Status][build-image]][build-url]
+[![Dependency Status][deps-image]][deps-url]
 
 # Calendar
 
   Calendar UI component designed for use as a date-picker,
   full-sized calendar or anything in-between.
-
-  ![javascript calendar component](http://f.cl.ly/items/2u3w1D421W0C370Z3G1U/Screen%20Shot%202012-10-11%20at%2014.32.41.png)
 
   Live demo is [here](http://component.github.io/calendar/)
 
@@ -89,12 +87,12 @@ cal.el.appendTo('body');
 [Intl]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_identification_and_negotiation
 [caniuse-intl]: http://caniuse.com/#search=Intl
 
-[npm-image]: https://img.shields.io/npm/v/@pirxpilot/calendar.svg
+[npm-image]: https://img.shields.io/npm/v/@pirxpilot/calendar
 [npm-url]: https://npmjs.org/package/@pirxpilot/calendar
 
-[travis-url]: https://travis-ci.org/pirxpilot/calendar
-[travis-image]: https://img.shields.io/travis/pirxpilot/calendar.svg
+[build-url]: https://github.com/pirxpilot/calendar/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/actions/workflow/status/pirxpilot/calendar/check.yaml?branch=main
 
-[gemnasium-image]: https://img.shields.io/gemnasium/pirxpilot/calendar.svg
-[gemnasium-url]: https://gemnasium.com/pirxpilot/calendar
+[deps-image]: https://img.shields.io/librariesio/release/npm/@pirxpilot/calendar
+[deps-url]: https://libraries.io/npm/@pirxpilot%2Fcalendar
 
