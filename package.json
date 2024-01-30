@@ -5,7 +5,7 @@
   "scripts": {
     "test": "make check"
   },
-  "repository": "https://github.com/pirxpilot/calendar.git",
+  "repository": "github:pirxpilot/calendar",
   "keywords": [
     "browser",
     "calendar",
@@ -20,8 +20,7 @@
   },
   "devDependencies": {
     "@pirxpilot/jshint": "^3.0.1",
-    "esbuild": "^0.20.0",
-    "mocha": "~5"
+    "esbuild": "^0.20.0"
   },
   "license": "MIT",
   "files": [

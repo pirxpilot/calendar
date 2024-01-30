@@ -30,7 +30,7 @@ lint: | node_modules
 	$(NODE_BIN)/jshint $(SRC) test
 
 test: | node_modules
-	$(NODE_BIN)/mocha --reporter spec
+	node --test
 
 clean:
 	rm -fr build node_modules
