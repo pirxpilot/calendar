@@ -7,7 +7,7 @@
   Calendar UI component designed for use as a date-picker,
   full-sized calendar or anything in-between.
 
-  Live demo is [here](http://component.github.io/calendar/)
+  Live demo is [here](https://pirxpilot.github.io/calendar/)
 
 ## Installation
 
@@ -95,4 +95,3 @@ cal.el.appendTo('body');
 
 [deps-image]: https://img.shields.io/librariesio/release/npm/@pirxpilot/calendar
 [deps-url]: https://libraries.io/npm/@pirxpilot%2Fcalendar
-
