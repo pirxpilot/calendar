@@ -22,9 +22,7 @@ describe('day range', function () {
   });
 
   it('should work with mixture of dates and arrays', function () {
-    const dr = new DayRange()
-      .min([2014, 3, 2])
-      .max(new Date(2014, 4, 3));
+    const dr = new DayRange().min([2014, 3, 2]).max(new Date(2014, 4, 3));
     assert.ok(dr.before(new Date(2014, 3, 1)));
     assert.ok(!dr.valid(new Date(2014, 3, 1)));
     assert.ok(dr.valid(new Date(2014, 3, 2)));
