@@ -2,10 +2,15 @@
   "name": "@pirxpilot/calendar",
   "version": "2.0.5",
   "description": "Calendar component",
+  "type": "module",
+  "exports": "./lib/calendar.js",
   "scripts": {
     "test": "make check"
   },
-  "repository": "github:pirxpilot/calendar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pirxpilot/calendar.git"
+  },
   "keywords": [
     "browser",
     "calendar",
@@ -24,7 +29,6 @@
   },
   "license": "MIT",
   "files": [
-    "index.js",
     "lib"
   ]
 }

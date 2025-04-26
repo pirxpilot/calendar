@@ -1,6 +1,6 @@
-const { describe, it } = require('node:test');
-const assert = require('node:assert');
-const DayRange = require('../lib/dayrange');
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
+import DayRange from '../lib/dayrange.js';
 
 describe('day range', function () {
   it('should consider all dates as valid if no min/max specified', function () {

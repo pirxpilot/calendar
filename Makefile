@@ -1,6 +1,6 @@
 PROJECT=calendar
 NODE_BIN=./node_modules/.bin
-SRC = index.js $(wildcard lib/*.js)
+SRC = $(wildcard lib/*.js)
 CSS = lib/calendar.css
 
 all: check compile
@@ -18,9 +18,9 @@ build/build.css: $(CSS) | build
 build/build.js: node_modules $(SRC) | build
 	$(NODE_BIN)/esbuild \
 		--bundle \
-		--global-name=Calendar \
+		--global-name=calendar \
 		--outfile=$@ \
-		index.js
+		lib/calendar.js
 
 node_modules: package.json
 	yarn
