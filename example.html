@@ -84,6 +84,7 @@
     <div id='restricted'></div>
     <script src="build/build.js"></script>
     <script>
+      var Calendar = calendar.default;
       var one = new Calendar().showMonthSelect().showYearSelect();
 
       one.on('view change', function(date, action){
