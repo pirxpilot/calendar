@@ -1,4 +1,10 @@
 
+3.0.0 / 2025-04-26
+==================
+
+ * transition to esm
+ * use `biome` for linting and formating
+
 2.0.5 / 2024-01-30
 ==================
 
