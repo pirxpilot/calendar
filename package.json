@@ -19,8 +19,8 @@
   ],
   "dependencies": {
     "@pirxpilot/in-groups-of": "^1.1.1",
-    "bounds": "~3",
-    "component-emitter": "^1.0.0",
+    "bounds": "~4",
+    "component-emitter": "~2",
     "range-component": "^1.0.0"
   },
   "devDependencies": {
