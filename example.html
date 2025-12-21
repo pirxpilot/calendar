@@ -87,14 +87,14 @@
       var Calendar = calendar.default;
       var one = new Calendar().showMonthSelect().showYearSelect();
 
-      one.on('view change', function(date, action){
+      one.on('view change', (date, action)=> {
         console.log('change %s', action);
         var twoDate = new Date(date);
         twoDate.setMonth(date.getMonth() + 1)
         small.show(twoDate);
       });
 
-      one.on('change', function(date){
+      one.on('change', (date)=> {
         console.log('selected: %s of %s %s',
           date.getDate(),
           date.getMonth(),
