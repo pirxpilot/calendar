@@ -30,199 +30,127 @@ var calendar = (() => {
   ));
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // node_modules/component-emitter/index.js
+  // node_modules/.pnpm/component-emitter@2.0.0/node_modules/component-emitter/index.js
   var require_component_emitter = __commonJS({
-    "node_modules/component-emitter/index.js"(exports, module) {
-      if (typeof module !== "undefined") {
-        module.exports = Emitter3;
-      }
-      function Emitter3(obj) {
-        if (obj)
-          return mixin(obj);
-      }
-      function mixin(obj) {
-        for (var key in Emitter3.prototype) {
-          obj[key] = Emitter3.prototype[key];
+    "node_modules/.pnpm/component-emitter@2.0.0/node_modules/component-emitter/index.js"(exports, module) {
+      function Emitter3(object) {
+        if (object) {
+          return mixin(object);
         }
-        return obj;
+        this._callbacks = /* @__PURE__ */ new Map();
       }
-      Emitter3.prototype.on = Emitter3.prototype.addEventListener = function(event, fn) {
-        this._callbacks = this._callbacks || {};
-        (this._callbacks["$" + event] = this._callbacks["$" + event] || []).push(fn);
+      function mixin(object) {
+        Object.assign(object, Emitter3.prototype);
+        object._callbacks = /* @__PURE__ */ new Map();
+        return object;
+      }
+      Emitter3.prototype.on = function(event, listener) {
+        const callbacks = this._callbacks.get(event) ?? [];
+        callbacks.push(listener);
+        this._callbacks.set(event, callbacks);
         return this;
       };
-      Emitter3.prototype.once = function(event, fn) {
-        function on() {
+      Emitter3.prototype.once = function(event, listener) {
+        const on = (...arguments_) => {
           this.off(event, on);
-          fn.apply(this, arguments);
-        }
-        on.fn = fn;
+          listener.apply(this, arguments_);
+        };
+        on.fn = listener;
         this.on(event, on);
         return this;
       };
-      Emitter3.prototype.off = Emitter3.prototype.removeListener = Emitter3.prototype.removeAllListeners = Emitter3.prototype.removeEventListener = function(event, fn) {
-        this._callbacks = this._callbacks || {};
-        if (0 == arguments.length) {
-          this._callbacks = {};
+      Emitter3.prototype.off = function(event, listener) {
+        if (event === void 0 && listener === void 0) {
+          this._callbacks.clear();
           return this;
         }
-        var callbacks = this._callbacks["$" + event];
-        if (!callbacks)
-          return this;
-        if (1 == arguments.length) {
-          delete this._callbacks["$" + event];
+        if (listener === void 0) {
+          this._callbacks.delete(event);
           return this;
         }
-        var cb;
-        for (var i = 0; i < callbacks.length; i++) {
-          cb = callbacks[i];
-          if (cb === fn || cb.fn === fn) {
-            callbacks.splice(i, 1);
-            break;
+        const callbacks = this._callbacks.get(event);
+        if (callbacks) {
+          for (const [index, callback] of callbacks.entries()) {
+            if (callback === listener || callback.fn === listener) {
+              callbacks.splice(index, 1);
+              break;
+            }
           }
-        }
-        if (callbacks.length === 0) {
-          delete this._callbacks["$" + event];
+          if (callbacks.length === 0) {
+            this._callbacks.delete(event);
+          } else {
+            this._callbacks.set(event, callbacks);
+          }
         }
         return this;
       };
-      Emitter3.prototype.emit = function(event) {
-        this._callbacks = this._callbacks || {};
-        var args = new Array(arguments.length - 1), callbacks = this._callbacks["$" + event];
-        for (var i = 1; i < arguments.length; i++) {
-          args[i - 1] = arguments[i];
-        }
+      Emitter3.prototype.emit = function(event, ...arguments_) {
+        const callbacks = this._callbacks.get(event);
         if (callbacks) {
-          callbacks = callbacks.slice(0);
-          for (var i = 0, len = callbacks.length; i < len; ++i) {
-            callbacks[i].apply(this, args);
+          const callbacksCopy = [...callbacks];
+          for (const callback of callbacksCopy) {
+            callback.apply(this, arguments_);
           }
         }
         return this;
       };
       Emitter3.prototype.listeners = function(event) {
-        this._callbacks = this._callbacks || {};
-        return this._callbacks["$" + event] || [];
+        return this._callbacks.get(event) ?? [];
+      };
+      Emitter3.prototype.listenerCount = function(event) {
+        if (event) {
+          return this.listeners(event).length;
+        }
+        let totalCount = 0;
+        for (const callbacks of this._callbacks.values()) {
+          totalCount += callbacks.length;
+        }
+        return totalCount;
       };
       Emitter3.prototype.hasListeners = function(event) {
-        return !!this.listeners(event).length;
+        return this.listenerCount(event) > 0;
       };
+      Emitter3.prototype.addEventListener = Emitter3.prototype.on;
+      Emitter3.prototype.removeListener = Emitter3.prototype.off;
+      Emitter3.prototype.removeEventListener = Emitter3.prototype.off;
+      Emitter3.prototype.removeAllListeners = Emitter3.prototype.off;
+      if (typeof module !== "undefined") {
+        module.exports = Emitter3;
+      }
     }
   });
 
-  // node_modules/@pirxpilot/in-groups-of/index.js
+  // node_modules/.pnpm/@pirxpilot+in-groups-of@1.1.3/node_modules/@pirxpilot/in-groups-of/index.js
   var require_in_groups_of = __commonJS({
-    "node_modules/@pirxpilot/in-groups-of/index.js"(exports, module) {
+    "node_modules/.pnpm/@pirxpilot+in-groups-of@1.1.3/node_modules/@pirxpilot/in-groups-of/index.js"(exports, module) {
       module.exports = function(arr, n) {
-        var i, ret = [];
         if (n < 1) {
           return arr;
         }
-        for (i = 0; i < arr.length; i += n) {
-          ret.push(arr.slice(i, i + n));
+        var ret = [];
+        var i = 0;
+        var j;
+        while (i < arr.length) {
+          j = i + n;
+          ret.push(arr.slice(i, j));
+          i = j;
         }
         return ret;
       };
     }
   });
 
-  // node_modules/range-component/index.js
+  // node_modules/.pnpm/range-component@1.0.0/node_modules/range-component/index.js
   var require_range_component = __commonJS({
-    "node_modules/range-component/index.js"(exports, module) {
+    "node_modules/.pnpm/range-component@1.0.0/node_modules/range-component/index.js"(exports, module) {
       module.exports = function(from, to, inclusive) {
         var ret = [];
-        if (inclusive)
-          to++;
+        if (inclusive) to++;
         for (var n = from; n < to; ++n) {
           ret.push(n);
         }
         return ret;
       };
-    }
-  });
-
-  // node_modules/bounds/index.js
-  var require_bounds = __commonJS({
-    "node_modules/bounds/index.js"(exports, module) {
-      var Bounds2 = class _Bounds {
-        static mixin(obj) {
-          for (const key in _Bounds.prototype) {
-            obj[key] = _Bounds.prototype[key];
-          }
-          return obj;
-        }
-        compare(fn) {
-          this._compare = fn;
-          return this;
-        }
-        distance(fn) {
-          this._distance = fn;
-          return this;
-        }
-        min(v) {
-          if (!arguments.length) {
-            return this._min;
-          }
-          this._min = v;
-          delete this._reversed;
-          return this;
-        }
-        max(v) {
-          if (!arguments.length) {
-            return this._max;
-          }
-          this._max = v;
-          delete this._reversed;
-          return this;
-        }
-        before(v) {
-          return this._min && this._compare(v, this._min) < 0;
-        }
-        after(v) {
-          return this._max && this._compare(v, this._max) > 0;
-        }
-        out(v) {
-          return this.before(v) || this.after(v);
-        }
-        in(v) {
-          return !this.out(v);
-        }
-        valid(v) {
-          if (this.reversed()) {
-            return !this.after(v) || !this.before(v);
-          }
-          return this.in(v);
-        }
-        invalid(v) {
-          return !this.valid(v);
-        }
-        reversed() {
-          if (this._reversed === void 0) {
-            this._reversed = calculateReversed(this);
-          }
-          return this._reversed;
-        }
-        restrict(v) {
-          const { _min, _max } = this;
-          if (this.reversed()) {
-            if (this.after(v) && this.before(v)) {
-              return this._distance(_max, v) < this._distance(v, _min) ? _max : _min;
-            }
-            return v;
-          }
-          if (this.before(v)) {
-            return _min;
-          }
-          if (this.after(v)) {
-            return _max;
-          }
-          return v;
-        }
-      };
-      function calculateReversed(self) {
-        return self._min && self._max && self.before(self._max);
-      }
-      module.exports = Bounds2;
     }
   });
 
@@ -234,19 +162,100 @@ var calendar = (() => {
   var import_component_emitter2 = __toESM(require_component_emitter(), 1);
 
   // lib/days.js
-  var import_component_emitter = __toESM(require_component_emitter(), 1);
   var import_in_groups_of = __toESM(require_in_groups_of(), 1);
+  var import_component_emitter = __toESM(require_component_emitter(), 1);
   var import_range_component = __toESM(require_range_component(), 1);
 
+  // node_modules/.pnpm/bounds@4.0.0/node_modules/bounds/index.js
+  var Bounds = class _Bounds {
+    static mixin(obj) {
+      for (const key of Object.getOwnPropertyNames(_Bounds.prototype)) {
+        if (key !== "constructor") {
+          obj[key] = _Bounds.prototype[key];
+        }
+      }
+      return obj;
+    }
+    compare(fn) {
+      this._compare = fn;
+      return this;
+    }
+    distance(fn) {
+      this._distance = fn;
+      return this;
+    }
+    min(v) {
+      if (!arguments.length) {
+        return this._min;
+      }
+      this._min = v;
+      delete this._reversed;
+      return this;
+    }
+    max(v) {
+      if (!arguments.length) {
+        return this._max;
+      }
+      this._max = v;
+      delete this._reversed;
+      return this;
+    }
+    before(v) {
+      return this._min && this._compare(v, this._min) < 0;
+    }
+    after(v) {
+      return this._max && this._compare(v, this._max) > 0;
+    }
+    out(v) {
+      return this.before(v) || this.after(v);
+    }
+    in(v) {
+      return !this.out(v);
+    }
+    valid(v) {
+      if (this.reversed()) {
+        return !this.after(v) || !this.before(v);
+      }
+      return this.in(v);
+    }
+    invalid(v) {
+      return !this.valid(v);
+    }
+    reversed() {
+      if (this._reversed === void 0) {
+        this._reversed = calculateReversed(this);
+      }
+      return this._reversed;
+    }
+    restrict(v) {
+      const { _min, _max } = this;
+      if (this.reversed()) {
+        if (this.after(v) && this.before(v)) {
+          return this._distance(_max, v) < this._distance(v, _min) ? _max : _min;
+        }
+        return v;
+      }
+      if (this.before(v)) {
+        return _min;
+      }
+      if (this.after(v)) {
+        return _max;
+      }
+      return v;
+    }
+  };
+  function calculateReversed(self) {
+    return self._min && self._max && self.before(self._max);
+  }
+
   // lib/dayrange.js
-  var import_bounds = __toESM(require_bounds(), 1);
   function date(d) {
     return Array.isArray(d) ? new Date(d[0], d[1], d[2]) : d;
   }
   function compare(a, b) {
     return date(a).getTime() - date(b).getTime();
   }
-  var DayRange = class extends import_bounds.default {
+  var DayRange = class extends Bounds {
     constructor(min, max) {
       super();
       this.compare(compare);
@@ -278,7 +287,7 @@ var calendar = (() => {
     const format = Intl.DateTimeFormat(locales, { weekday: "narrow" });
     const date2 = new Date(2016, 0, 10);
     const names = [];
-    for (let i = 10; i < 18; i++) {
+    for (let i = 10; i < 17; i++) {
       date2.setDate(i);
       names.push(format.format(date2));
     }
@@ -302,10 +311,8 @@ var calendar = (() => {
 
   // lib/utils.js
   function clamp(month) {
-    if (month > 11)
-      return 0;
-    if (month < 0)
-      return 11;
+    if (month > 11) return 0;
+    if (month < 0) return 11;
     return month;
   }
 
@@ -530,22 +537,18 @@ var calendar = (() => {
   };
   function cellsBefore(n, month, year, validRange) {
     const cells = [];
-    if (month === 0)
-      --year;
+    if (month === 0) --year;
     const prev = clamp(month - 1);
     let before = daysInMonth(prev, year);
-    while (n--)
-      cells.push(renderDay([year, prev, before--], validRange, false, "prev-day"));
+    while (n--) cells.push(renderDay([year, prev, before--], validRange, false, "prev-day"));
     return cells.reverse();
   }
   function cellsAfter(n, month, year, validRange) {
     const cells = [];
     let day = 0;
-    if (month === 11)
-      ++year;
+    if (month === 11) ++year;
     const next = clamp(month + 1);
-    while (n--)
-      cells.push(renderDay([year, next, ++day], validRange, false, "next-day"));
+    while (n--) cells.push(renderDay([year, next, ++day], validRange, false, "next-day"));
     return cells;
   }
   function renderDay(ymd, validRange, selected, style) {
